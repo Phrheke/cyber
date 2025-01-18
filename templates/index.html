@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Resilience Pyramid</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Cyber Resilience Pyramid Framework</h1>
+        <select id="scenario-selector">
+            <option value="">General Pyramid</option>
+            {% for scenario in scenarios.keys() %}
+            <option value="{{ scenario }}">{{ scenario.capitalize() }}</option>
+            {% endfor %}
+        </select>
+        
+        <div class="pyramid">
+        
+            
+           
+            <div class="layer" data-layer="resilience">5</div>
+            <div class="layer" data-layer="integration">4</div>
+            <div class="layer" data-layer="adaptation">3</div>
+            <div class="layer" data-layer="core">2</div>
+            <div class="layer" data-layer="foundation">1</div>
+
+        </div>
+
+        <div class="description">
+            
+            <p id="description-text">Select a layer or scenario to view details here.</p>
+        </div>
+    </div>
+
+    <div class="instructions">
+            <h2>How to Use</h2>
+            <p>
+                This Implementation allows you to explore the five layers of the pyramid. Each layer represents a different concept:
+                <ul>
+                    <li><strong>Foundation</strong> - The base of the pyramid, representing the fundamental principles.</li>
+                    <li><strong>Core</strong> - The central layer, representing the heart of the Framework.</li>
+                    <li><strong>Adaptation</strong> - A layer focused on the ability to adapt.</li>
+                    <li><strong>Integration</strong> - Representing the integration of various systems.</li>
+                    <li><strong>Resilience</strong> - The final layer, symbolizing the Framework's strength and ability to endure.</li>
+                </ul>
+                Click on any layer to see more details about it. You can select a scenario and see each layers response for that case. 
+            </p>
+        </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
